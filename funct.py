@@ -145,6 +145,49 @@ print('Exercise 7:', calculate_tip(7268, 20.8752525))
 #
 # Define the function and call it with different sets of numbers to test.
 
+def product(*args):
+    total = 1
+    
+    for arg in args:
+        total *= arg
+    return total
 
 
 print('Exercise 8:', product(2, 5, 5))
+
+
+# Exercise 9: Basic Calculator
+#
+# Create a function named `basicCalculator` that takes three arguments: 
+# two numbers and a string representing an operation ('add', 'subtract', 'multiply', 'divide'). 
+# Perform the provided operation on the two numbers. In operations where the order of numbers is important, 
+# treat the first parameter as the first operand and the second parameter as the second operand.
+#
+# Examples:
+# basicCalculator(10, 5, 'subtract') should return 5.
+# basicCalculator(10, 5, 'add') should return 15.
+# basicCalculator(10, 5, 'multiply') should return 50.
+# basicCalculator(10, 5, 'divide') should return 2.
+#
+# Define the function and then call it below.
+
+def basic_calculator(x, y, z):
+    if z == 'add':
+        return x + y
+    elif z == 'subtract':
+        return x - y
+    elif z == 'multiply':
+        return x * y
+    elif z == 'divide':
+        if y == 0:
+            return 'divide by zero error'
+        else:
+            return x / y
+    else:
+        return 'please enter an opperation'
+
+print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))
+print('Exercise 9 Result:', basic_calculator(10, 5, 'add'))
+print('Exercise 9 Result:', basic_calculator(10, 5, 'multiply'))
+print('Exercise 9 Result:', basic_calculator(15, 5, 'divide'))
+print('Exercise 9 Result:', basic_calculator(10, 0, 'divide'))
